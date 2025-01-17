@@ -25,7 +25,9 @@ class ProductSpider(scrapy.Spider):
                     yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_flipkart)
 
                 elif "snapdeal" in domain:
-                    yield Request(url=f'https://{domain}/search?keyword={product}', callback=self.parse_snap)
+                    yield Request(url=f'https://{domain}/search?keyword={product}', callback=self.parse_snapdeal)
+                elif "shopclues" in domain:
+                    yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_shopclues)
 
     
     def parse_flipkart(self, response):
@@ -90,7 +92,7 @@ class ProductSpider(scrapy.Spider):
                     yield response.follow(next_page, callback=self.parse_flipkart)
 
             
-    def parse_snap(self,response):
+    def parse_snapdeal(self,response):
         """
         Parser to fetch info from Snapdeal
         """
@@ -125,7 +127,49 @@ class ProductSpider(scrapy.Spider):
             if self.item_count < self.max_items:
                 next_page = response.xpath('//a[contains(@class, "next")]/@href').extract_first()
                 if next_page:
-                    yield response.follow(next_page, callback=self.parse_snap)
+                    yield response.follow(next_page, callback=self.parse_snapdeal)
+
+    def parse_shopclues(self, response):
+        """
+        Parser to fetch info from Shopclues
+        """
+        noresult = response.xpath('//span[@class="no_fnd"]/text()').extract_first()
+        if noresult:
+            print(noresult + " Please try correcting your spelling")
+            yield {'Website': 'Shopclues', 'Stock': noresult, 'Product': 'None', 'Rating': 'None',
+                   'Original Price': 'None', 'Current Price': 'None', 'LINK': 'None'}
+        else:
+            items = response.xpath('//div[@class="column col3 search_blocks"]')
+            for item in items:
+                if self.item_count >= self.max_items:
+                    self.crawler.engine.close_spider(self, reason="Reached 1,000 items")
+                    break
+
+                link = item.xpath('.//a/@href').extract_first()
+                title = item.xpath('.//h2/text()').extract_first()
+                current_price = item.xpath('.//div[@class="ori_price"]/span/text()').extract_first()
+                ref = item.xpath('.//div[@class="refurbished_i"]/text()').extract_first()
+                if ref == 'Refurbished':
+                    original_price = current_price
+                else:
+                    original_price = item.xpath('.//div[@class="old_prices"]/span/text()').extract_first()
+                rating = 'NO rating available'
+                stock = "IN STOCK"
+
+                self.item_count += 1
+
+                yield {'Website': 'Shopclues', 'Stock': stock, 'Product': title, 'Rating': rating,
+                       'Current Price': current_price, 'Original Price': original_price, 'LINK': link}
+
+                # self.write_to_csv('Shopclues', stock, title, rating, current_price, original_price, link)
+                # self.write_to_json('Shopclues', stock, title, rating, current_price, original_price, link)
+
+            # Follow the next page if the item count hasn't been reached
+            if self.item_count < self.max_items:
+                next_page = response.xpath('//a[contains(@class, "next")]/@href').extract_first()
+                if next_page:
+                    yield response.follow(next_page, callback=self.parse_shopclues)
+
 
 
     # def write_to_csv(self, website, stock, title, rating, current_price, original_price, link):
