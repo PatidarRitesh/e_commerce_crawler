@@ -29,6 +29,8 @@ class ProductSpider(scrapy.Spider):
                     yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_shopclues)
                 elif "paytmmall" in domain:
                     yield Request(url=f'https://{domain}/shop/search?q={product}', callback=self.parse_paytm)
+                elif "ebay" in domain:
+                    yield Request(url=f'https://{domain}/sch/i.html?_nkw={product}', callback=self.parse_ebay)
 
     
     def parse_flipkart(self, response):
@@ -52,7 +54,7 @@ class ProductSpider(scrapy.Spider):
             items = response.xpath('//div[@data-id]')
             for item in items:
                 if self.item_count >= self.max_items:
-                    self.crawler.engine.close_spider(self, reason="Reached 1,000 items")
+                    self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
                     break
 
                 text = item.xpath('.//div/text()').extract()
@@ -106,10 +108,13 @@ class ProductSpider(scrapy.Spider):
             items = response.xpath('//a[@class="dp-widget-link"]')
             for item in items:
                 if self.item_count >= self.max_items:
-                    self.crawler.engine.close_spider(self, reason="Reached 1,000 items")
+                    self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
                     break
 
                 link = item.xpath('.//@href').extract_first()
+                # check if the link is a duplicate
+                if link in self.seen_links:
+                    continue
                 title = item.xpath('.//p/text()').extract_first()
                 current_price = item.xpath('.//span[contains(@class,"product-price")]/text()').extract_first()
                 original_price = item.xpath('.//span[contains(@class,"product-desc-price")]/text()').extract_first()
@@ -143,10 +148,13 @@ class ProductSpider(scrapy.Spider):
             items = response.xpath('//div[@class="column col3 search_blocks"]')
             for item in items:
                 if self.item_count >= self.max_items:
-                    self.crawler.engine.close_spider(self, reason="Reached 1,000 items")
+                    self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
                     break
 
                 link = item.xpath('.//a/@href').extract_first()
+                # check if the link is a duplicate
+                if link in self.seen_links:
+                    continue
                 title = item.xpath('.//h2/text()').extract_first()
                 current_price = item.xpath('.//div[@class="ori_price"]/span/text()').extract_first()
                 ref = item.xpath('.//div[@class="refurbished_i"]/text()').extract_first()
@@ -185,7 +193,7 @@ class ProductSpider(scrapy.Spider):
             items = response.xpath('//div[@class="_2i1r"]')
             for item in items:
                 if self.item_count >= self.max_items:
-                    self.crawler.engine.close_spider(self, reason="Reached 1,000 items")
+                    self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
                     break
 
                 current_price = item.xpath('.//div[@class="_1kMS"]/span/text()').extract_first()
@@ -196,6 +204,9 @@ class ProductSpider(scrapy.Spider):
                 else:
                     original_price = item.xpath('.//div[@class="dQm2"]/span/text()').extract_first()
                 link = path + item.xpath('.//div[@class="_3WhJ"]/a/@href').extract_first()
+                # check if the link is a duplicate
+                if link in self.seen_links:
+                    continue
                 title = item.xpath('.//div[@class="_2apC"]/text()').extract_first()
                 rating = 'NO rating available'
                 stock = 'IN STOCK'
@@ -213,6 +224,52 @@ class ProductSpider(scrapy.Spider):
                 next_page = response.xpath('//a[contains(@class, "next")]/@href').extract_first()
                 if next_page:
                     yield response.follow(next_page, callback=self.parse_paytm)
+
+
+    def parse_ebay(self, response):
+        """
+        Parser to fetch info from eBay
+        """
+        noresult = response.xpath('//h1[contains(text(),"No results for")]/text()').extract_first()
+        if noresult:
+            print(noresult + " Please try correcting your spelling")
+            yield {'Website': 'eBay.com', 'Stock': 'No results found', 'Product': 'None', 'Rating': 'None',
+                   'Original Price': 'None', 'Current Price': 'None', 'LINK': 'None'}
+        else:
+            items = response.xpath('//li[contains(@class, "s-item")]')
+            for item in items:
+                if self.item_count >= self.max_items:
+                    self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
+                    break
+
+                link = item.xpath('.//a[contains(@class, "s-item__link")]/@href').extract_first()
+                # check if the link is a duplicate
+                if link in self.seen_links:
+                    continue
+                title = item.xpath('.//h3[contains(@class, "s-item__title")]/text()').extract_first()
+                rating = item.xpath('.//div[contains(@class, "s-item__reviews")]/span/span/text()').extract_first()
+                current_price = item.xpath('.//span[contains(@class, "s-item__price")]/text()').extract_first()
+                original_price = item.xpath('.//span[contains(@class, "s-item__strike")]/text()').extract_first()
+
+                if not original_price:
+                    original_price = current_price
+
+                stock = "IN STOCK"
+
+                self.item_count += 1
+
+                yield {'Website': 'eBay.com', 'Stock': stock, 'Product': title, 'Rating': rating if rating else 'No rating available',
+                       'Current Price': current_price, 'Original Price': original_price, 'LINK': link}
+
+                # self.write_to_csv('eBay.com', stock, title, rating, current_price, original_price, link)
+                # self.write_to_json('eBay.com', stock, title, rating, current_price, original_price, link)
+
+            # Follow the next page if the item count hasn't been reached
+            if self.item_count < self.max_items:
+                next_page = response.xpath('//a[contains(@class, "pagination__next")]/@href').extract_first()
+                if next_page:
+                    yield response.follow(next_page, callback=self.parse_ebay)
+
 
     # def write_to_csv(self, website, stock, title, rating, current_price, original_price, link):
     #     """Write a row to the CSV file."""
