@@ -31,7 +31,7 @@ DOWNLOAD_DELAY = 3
 
 ITEM_PIPELINES = {'e_commerce_crawler.pipelines.WriteToCsv': 300}
 
-dir = r"C:\Users\HXP\Dropbox\PC\Documents\SystemDesignMastery\product_scraper"
+dir = r"C:\Users\HXP\Dropbox\PC\Documents\Python Scripts\e_commerce_crawler"
 csv_file_path = os.path.join(dir, filename)
 json_file_path = os.path.join(dir, product + ".json")
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
