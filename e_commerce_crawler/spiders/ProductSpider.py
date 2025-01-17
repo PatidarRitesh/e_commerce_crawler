@@ -23,11 +23,12 @@ class ProductSpider(scrapy.Spider):
             for domain in domains:
                 if "flipkart" in domain:
                     yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_flipkart)
-
                 elif "snapdeal" in domain:
                     yield Request(url=f'https://{domain}/search?keyword={product}', callback=self.parse_snapdeal)
                 elif "shopclues" in domain:
                     yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_shopclues)
+                elif "paytmmall" in domain:
+                    yield Request(url=f'https://{domain}/shop/search?q={product}', callback=self.parse_paytm)
 
     
     def parse_flipkart(self, response):
@@ -170,7 +171,48 @@ class ProductSpider(scrapy.Spider):
                 if next_page:
                     yield response.follow(next_page, callback=self.parse_shopclues)
 
+    def parse_paytm(self,response):
+        """
+        Parser to fetch info from Paytm Mall
+        """
+        path = 'https://paytmmall.com'
+        noresult = response.xpath('//span[contains(text(),"Sorry")]/text()').extract_first()
+        if noresult:
+            print(noresult + " Please try correcting your spelling")
+            yield {'Website': 'Paytmmall', 'Stock': 'None', 'Product': 'None', 'Rating': 'None',
+                   'Original Price': 'None', 'Current Price': 'None', 'LINK': 'None'}
+        else:
+            items = response.xpath('//div[@class="_2i1r"]')
+            for item in items:
+                if self.item_count >= self.max_items:
+                    self.crawler.engine.close_spider(self, reason="Reached 1,000 items")
+                    break
 
+                current_price = item.xpath('.//div[@class="_1kMS"]/span/text()').extract_first()
+                if item.xpath('.//div[@class="dQm2"]/span/text()').extract_first() is None:
+                    original_price = current_price
+                elif item.xpath('.//div[@class="dQm2"]/span/text()').extract_first() == '-':
+                    original_price = item.xpath('.//div[@class="dQm2"]/text()').extract_first()
+                else:
+                    original_price = item.xpath('.//div[@class="dQm2"]/span/text()').extract_first()
+                link = path + item.xpath('.//div[@class="_3WhJ"]/a/@href').extract_first()
+                title = item.xpath('.//div[@class="_2apC"]/text()').extract_first()
+                rating = 'NO rating available'
+                stock = 'IN STOCK'
+
+                self.item_count += 1
+
+                yield {'Website': 'Paytm Mall', 'Stock': stock, 'Product': title, 'Rating': rating,
+                       'Current Price': current_price, 'Original Price': original_price, 'LINK': link}
+
+                # self.write_to_csv('Paytm Mall', stock, title, rating, current_price, original_price, link)
+                # self.write_to_json('Paytm Mall', stock, title, rating, current_price, original_price, link)
+
+            # Follow the next page if the item count hasn't been reached
+            if self.item_count < self.max_items:
+                next_page = response.xpath('//a[contains(@class, "next")]/@href').extract_first()
+                if next_page:
+                    yield response.follow(next_page, callback=self.parse_paytm)
 
     # def write_to_csv(self, website, stock, title, rating, current_price, original_price, link):
     #     """Write a row to the CSV file."""
