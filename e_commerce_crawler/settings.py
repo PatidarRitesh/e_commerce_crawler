@@ -33,7 +33,14 @@ ITEM_PIPELINES = {'e_commerce_crawler.pipelines.WriteToCsv': 300}
 
 dir = r"C:\Users\HXP\Dropbox\PC\Documents\Python Scripts\e_commerce_crawler"
 csv_file_path = os.path.join(dir, filename)
-json_file_path = os.path.join(dir, product + ".json")
+# Path to the JSON file
+JSON_FILE_PATH = os.path.join(os.path.dirname(__file__), 'output.json')
+
+# Enable the pipeline
+ITEM_PIPELINES = {
+    'e_commerce_crawler.pipelines.EcommerceCrawlerPipeline': 300,
+}
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 

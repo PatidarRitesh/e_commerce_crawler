@@ -8,8 +8,8 @@ import json
 # User inputs
 product = settings.product
 domains = settings.domains
-csv_file_path = settings.csv_file_path
-json_file_path = settings.json_file_path
+# csv_file_path = settings.csv_file_path
+# json_file_path = settings.json_file_path
 
 class ProductSpider(scrapy.Spider):
     name = 'ProductSpider'
@@ -78,7 +78,7 @@ class ProductSpider(scrapy.Spider):
 
                 # Write the details to the CSV file
                 # self.write_to_csv('Flipkart', stock, title, rating, current_price, original_price, link)
-                self.write_to_json('Flipkart', stock, title, rating, current_price, original_price, link)
+                # self.write_to_json('Flipkart', stock, title, rating, current_price, original_price, link)
 
             # Follow the next page if the item count hasn't been reached
             if self.item_count < self.max_items:
@@ -88,36 +88,36 @@ class ProductSpider(scrapy.Spider):
 
 
 
-    def write_to_csv(self, website, stock, title, rating, current_price, original_price, link):
-        """Write a row to the CSV file."""
-        with open(csv_file_path, 'a', encoding='utf-8', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow([website, stock, title, rating, current_price, original_price, link])
+    # def write_to_csv(self, website, stock, title, rating, current_price, original_price, link):
+    #     """Write a row to the CSV file."""
+    #     with open(csv_file_path, 'a', encoding='utf-8', newline='') as f:
+    #         writer = csv.writer(f)
+    #         writer.writerow([website, stock, title, rating, current_price, original_price, link])
 
-    def write_to_json(self, website, stock, title, rating, current_price, original_price, link):
-        """Write the scraped data to a JSON file."""
-        data = {
-            "stock": stock,
-            "title": title,
-            "rating": rating,
-            "current_price": current_price,
-            "original_price": original_price,
-            "link": link
-        }
+    # def write_to_json(self, website, stock, title, rating, current_price, original_price, link):
+    #     """Write the scraped data to a JSON file."""
+    #     data = {
+    #         "stock": stock,
+    #         "title": title,
+    #         "rating": rating,
+    #         "current_price": current_price,
+    #         "original_price": original_price,
+    #         "link": link
+    #     }
 
-        # Open the JSON file and append the data
-        if os.path.exists(json_file_path):
-            with open(json_file_path, 'r+', encoding='utf-8') as f:
-                existing_data = json.load(f)
-                # Append data to the specific website key
-                if website not in existing_data:
-                    existing_data[website] = []
-                existing_data[website].append(data)
+    #     # Open the JSON file and append the data
+    #     if os.path.exists(json_file_path):
+    #         with open(json_file_path, 'r+', encoding='utf-8') as f:
+    #             existing_data = json.load(f)
+    #             # Append data to the specific website key
+    #             if website not in existing_data:
+    #                 existing_data[website] = []
+    #             existing_data[website].append(data)
 
-                f.seek(0)
-                json.dump(existing_data, f, indent=4, ensure_ascii=False)
-        else:
-            with open(json_file_path, 'w', encoding='utf-8') as f:
-                # Initialize with empty data
-                initial_data = {website: [data]}
-                json.dump(initial_data, f, indent=4, ensure_ascii=False)
+    #             f.seek(0)
+    #             json.dump(existing_data, f, indent=4, ensure_ascii=False)
+    #     else:
+    #         with open(json_file_path, 'w', encoding='utf-8') as f:
+    #             # Initialize with empty data
+    #             initial_data = {website: [data]}
+    #             json.dump(initial_data, f, indent=4, ensure_ascii=False)
