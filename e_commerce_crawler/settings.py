@@ -6,19 +6,34 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-
+import os 
 BOT_NAME = "e_commerce_crawler"
 
 SPIDER_MODULES = ["e_commerce_crawler.spiders"]
 NEWSPIDER_MODULE = "e_commerce_crawler.spiders"
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "e_commerce_crawler (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
 
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+# Get user inputs
+product = input("Enter the product name: ")
+domains = input("Enter the domains (comma-separated, e.g., flipkart.com,amazon.in): ").split(',')
+domains = [domain.strip().lower() for domain in domains]  # Normalize domain input
+
+filename = product + ".csv"
+
+ROBOTSTXT_OBEY = False
+DOWNLOAD_DELAY = 3
+
+ITEM_PIPELINES = {'e_commerce_crawler.pipelines.WriteToCsv': 300}
+
+dir = r"C:\Users\HXP\Dropbox\PC\Documents\SystemDesignMastery\product_scraper"
+csv_file_path = os.path.join(dir, filename)
+json_file_path = os.path.join(dir, product + ".json")
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
