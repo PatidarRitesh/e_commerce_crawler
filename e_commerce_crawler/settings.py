@@ -18,7 +18,10 @@ NEWSPIDER_MODULE = "e_commerce_crawler.spiders"
 # Obey robots.txt rules
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-
+DOWNLOAD_HANDLERS = {
+    'http': 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler',
+    'https': 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler',
+}
 # Get user inputs
 product = input("Enter the product name: ")
 domains = input("Enter the domains (comma-separated, e.g., flipkart.com,amazon.in): ").split(',')
@@ -28,6 +31,9 @@ filename = product + ".csv"
 
 ROBOTSTXT_OBEY = False
 DOWNLOAD_DELAY = 3
+custom_settings = {
+    'CONCURRENT_REQUESTS': 1,  # Process one request at a time
+}
 
 ITEM_PIPELINES = {'e_commerce_crawler.pipelines.WriteToCsv': 300}
 

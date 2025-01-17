@@ -1,27 +1,73 @@
+# from scrapy.http import Request
+# import scrapy
+# from e_commerce_crawler import settings
+# import csv
+# import os
+# import json
+# import re
+# # User inputs
+# product = settings.product
+# domains = settings.domains
+# # csv_file_path = settings.csv_file_path
+# # json_file_path = settings.json_file_path
+
+# class ProductSpider(scrapy.Spider):
+#     name = 'ProductSpider'
+#     item_count = 0  # Initialize item counter
+#     max_items = 20 # Maximum items to crawl
+#     seen_links = set()  # To store visited links and avoid duplicates
+#     custom_settings = {
+#         'PLAYWRIGHT_BROWSER_TYPE': 'chromium',
+#         'PLAYWRIGHT_LAUNCH_OPTIONS': {'headless': True},
+#     }
+
+#     PRODUCT_PATTERNS = [r'/product/', r'/dp/', r'/item/', r'/p/']
+
+#     def start_requests(self):
+#         if domains:
+#             for domain in domains:
+#                 if "flipkart" in domain:
+#                     yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_flipkart)
+#                 elif "snapdeal" in domain:
+#                     yield Request(url=f'https://{domain}/search?keyword={product}', callback=self.parse_snapdeal)
+#                 elif "shopclues" in domain:
+#                     yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_shopclues)
+#                 elif "paytmmall" in domain:
+#                     yield Request(url=f'https://{domain}/shop/search?q={product}', callback=self.parse_paytm)
+#                 elif "ebay" in domain:
+#                     yield Request(url=f'https://{domain}/sch/i.html?_nkw={product}', callback=self.parse_ebay)
+               
 from scrapy.http import Request
 import scrapy
 from e_commerce_crawler import settings
-import csv
-import os
-import json
+import re
 
 # User inputs
 product = settings.product
 domains = settings.domains
-# csv_file_path = settings.csv_file_path
-# json_file_path = settings.json_file_path
 
 class ProductSpider(scrapy.Spider):
     name = 'ProductSpider'
-    item_count = 0  # Initialize item counter
-    max_items = 20 # Maximum items to crawl
-    seen_links = set()  # To store visited links and avoid duplicates
+    item_count = 0
+    max_items = 20
+    seen_links = set()
+    custom_settings = {
+        'PLAYWRIGHT_BROWSER_TYPE': 'chromium',
+        'PLAYWRIGHT_LAUNCH_OPTIONS': {'headless': True},
+    }
 
+    PRODUCT_PATTERNS = [r'/product/', r'/dp/', r'/item/', r'/p/']
 
     def start_requests(self):
         if domains:
             for domain in domains:
-                if "flipkart" in domain:
+                if "amazon" in domain:
+                    yield Request(
+                        url=f'https://{domain}/s?k={product}',
+                        callback=self.parse_amazon,
+                        meta={"playwright": True}
+                    )
+                elif "flipkart" in domain:
                     yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_flipkart)
                 elif "snapdeal" in domain:
                     yield Request(url=f'https://{domain}/search?keyword={product}', callback=self.parse_snapdeal)
@@ -32,6 +78,71 @@ class ProductSpider(scrapy.Spider):
                 elif "ebay" in domain:
                     yield Request(url=f'https://{domain}/sch/i.html?_nkw={product}', callback=self.parse_ebay)
 
+    # def parse_amazon(self, response):
+    #     """
+    #     Parser for Amazon-like pages.
+    #     """
+    #     links = response.css('a::attr(href)').getall()
+    #     for link in links:
+
+    #         full_url = response.urljoin(link)
+    #         if self.is_product_url(full_url):
+    #             if full_url in self.seen_links:
+    #                 continue
+    #             self.seen_links.add(full_url)
+    #             self.item_count += 1
+    #             if self.item_count >= self.max_items:
+    #                 self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
+    #                 break
+    #             yield {
+    #                 'Website': 'Amazon',
+    #                 'Product URL': full_url
+    #             }
+    #         elif self.is_internal_url(full_url, response.url):
+    #             yield scrapy.Request(
+    #                 full_url,
+    #                 callback=self.parse_amazon,
+    #                 meta={"playwright": True}
+    #             )
+
+    def parse_amazon(self, response):
+        """
+        Parser for Amazon-like pages.
+        """
+        links = response.css('a::attr(href)').getall()
+        for link in links:
+            # Stop processing if the max_items limit is reached
+            if self.item_count >= self.max_items:
+                # Close the spider
+                self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
+                break  # Exit the loop
+                return  # Exit immediately
+
+            full_url = response.urljoin(link)
+            if self.is_product_url(full_url):
+                if full_url in self.seen_links:
+                    continue
+                self.seen_links.add(full_url)
+                self.item_count += 1
+                yield {
+                    'Website': 'Amazon',
+                    'Product URL': full_url
+                }
+            elif self.is_internal_url(full_url, response.url):
+                yield scrapy.Request(
+                    full_url,
+                    callback=self.parse_amazon,
+                    meta={"playwright": True}
+                )
+
+
+
+
+    def is_product_url(self, url):
+        return any(re.search(pattern, url) for pattern in self.PRODUCT_PATTERNS)
+
+    def is_internal_url(self, url, base_url):
+        return base_url.split('/')[2] in url
     
     def parse_flipkart(self, response):
         """Parser to fetch info from Flipkart"""
@@ -226,7 +337,7 @@ class ProductSpider(scrapy.Spider):
                     yield response.follow(next_page, callback=self.parse_paytm)
 
 
-    def parse_ebay(self, response):
+    def parse_ebay(self, response): 
         """
         Parser to fetch info from eBay
         """
@@ -270,6 +381,7 @@ class ProductSpider(scrapy.Spider):
                 if next_page:
                     yield response.follow(next_page, callback=self.parse_ebay)
 
+    
 
     # def write_to_csv(self, website, stock, title, rating, current_price, original_price, link):
     #     """Write a row to the CSV file."""
