@@ -24,6 +24,9 @@ class ProductSpider(scrapy.Spider):
                 if "flipkart" in domain:
                     yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_flipkart)
 
+                elif "snapdeal" in domain:
+                    yield Request(url=f'https://{domain}/search?keyword={product}', callback=self.parse_snap)
+
     
     def parse_flipkart(self, response):
         """Parser to fetch info from Flipkart"""
@@ -86,6 +89,43 @@ class ProductSpider(scrapy.Spider):
                 if next_page:
                     yield response.follow(next_page, callback=self.parse_flipkart)
 
+            
+    def parse_snap(self,response):
+        """
+        Parser to fetch info from Snapdeal
+        """
+        noresult=response.xpath('//span[@class="alert-heading"]/text()').extract_first()
+        if noresult:
+            print(noresult + " Please try correcting your spelling")
+            yield {'Website': 'Snapdeal', 'Stock': noresult, 'Product': 'None', 'Rating': 'None',
+                   'Original Price': 'None', 'Current Price': 'None', 'LINK': 'None'}
+        else:
+            items = response.xpath('//a[@class="dp-widget-link"]')
+            for item in items:
+                if self.item_count >= self.max_items:
+                    self.crawler.engine.close_spider(self, reason="Reached 1,000 items")
+                    break
+
+                link = item.xpath('.//@href').extract_first()
+                title = item.xpath('.//p/text()').extract_first()
+                current_price = item.xpath('.//span[contains(@class,"product-price")]/text()').extract_first()
+                original_price = item.xpath('.//span[contains(@class,"product-desc-price")]/text()').extract_first()
+                rating = 'NO rating available'
+                stock = "IN STOCK"
+
+                self.item_count += 1
+
+                yield {'Website': 'Snapdeal', 'Stock': stock, 'Product': title, 'Rating': rating,
+                       'Current Price': current_price, 'Original Price': original_price, 'LINK': link}
+
+                # self.write_to_csv('Snapdeal', stock, title, rating, current_price, original_price, link)
+                # self.write_to_json('Snapdeal', stock, title, rating, current_price, original_price, link)
+
+            # Follow the next page if the item count hasn't been reached
+            if self.item_count < self.max_items:
+                next_page = response.xpath('//a[contains(@class, "next")]/@href').extract_first()
+                if next_page:
+                    yield response.follow(next_page, callback=self.parse_snap)
 
 
     # def write_to_csv(self, website, stock, title, rating, current_price, original_price, link):
