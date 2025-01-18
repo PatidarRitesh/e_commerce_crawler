@@ -41,6 +41,7 @@ from scrapy.http import Request
 import scrapy
 from e_commerce_crawler import settings
 import re
+import time
 
 # User inputs
 product = settings.product
@@ -56,7 +57,8 @@ class ProductSpider(scrapy.Spider):
         'PLAYWRIGHT_LAUNCH_OPTIONS': {'headless': True},
     }
 
-    PRODUCT_PATTERNS = [r'/product/', r'/dp/', r'/item/', r'/p/',r'/p/\d+',r'/c/\d+',r'/search/result/']
+    PRODUCT_PATTERNS = [r'/product/', r'/dp/', r'/item/', r'/p/',r'/p/\d+',r'/c/\d+',r'/search/result/', r'/mp/',r'/p-',                # Matches URLs like /p-mp000000016854372
+    r'/mp\d+',r'/p-mp\d+']
 
     def start_requests(self):
         if domains:
@@ -101,6 +103,15 @@ class ProductSpider(scrapy.Spider):
                         callback=self.parse_nykaaman,
                         meta={"playwright": True}
                     )
+                if "tatacliq" in domain:
+                    search_url = f'https://{domain}/search/?searchCategory=all&text={product}'
+                    self.logger.info(f"Starting search at: {search_url}")
+                    yield Request(
+                        url=search_url,
+                        callback=self.parse_tatacliq,
+                        meta={"playwright": True}
+                    )
+
 
     def parse_amazon(self, response):
         """
@@ -189,20 +200,74 @@ class ProductSpider(scrapy.Spider):
                     meta={"playwright": True}
                 )
 
+    # def parse_nykaaman(self, response):
+    #     """
+    #     Parse the Nykaaman search results and extract product links.
+    #     """
+    #     links = response.css('a::attr(href)').getall()  # Get all links
+    #     for link in links:
+    #         # Stop if max items limit is reached
+    #         if self.item_count >= self.max_items:
+    #             self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
+    #             return
+
+    #         full_url = response.urljoin(link)
+
+    #         # Check if it's a product URL (looking for pattern `/p/` in the link)
+    #         if self.is_product_url(full_url):
+    #             if full_url in self.seen_links:
+    #                 continue
+    #             self.seen_links.add(full_url)
+    #             self.item_count += 1
+    #             yield {
+    #                 'Website': 'Nykaaman',
+    #                 'Product URL': full_url
+    #             }
+    #         elif self.is_internal_url(full_url, response.url):  # Follow internal links
+    #             yield scrapy.Request(
+    #                 full_url,
+    #                 callback=self.parse_nykaaman,
+    #                 meta={"playwright": True}
+    #             )
+
+    # def parse_nykaaman(self, response):
+    #     """
+    #     Parse the Nykaaman search results and extract product links, also handles dynamic loading of products.
+    #     """
+    #     # Extract product links
+    #     links = response.css('a::attr(href)').getall()
+    #     for link in links:
+    #         if self.item_count >= self.max_items:
+    #             self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
+    #             return
+
+    #         full_url = response.urljoin(link)
+
+    #         if self.is_product_url(full_url):
+    #             if full_url in self.seen_links:
+    #                 continue
+    #             self.seen_links.add(full_url)
+    #             self.item_count += 1
+    #             yield {
+    #                 'Website': 'Nykaaman',
+    #                 'Product URL': full_url
+    #             }
+    #         elif self.is_internal_url(full_url, response.url):
+    #             yield scrapy.Request(
+    #                 full_url,
+    #                 callback=self.parse_nykaaman,
+    #                 meta={"playwright": True}
+    #             )
+
     def parse_nykaaman(self, response):
-        """
-        Parse the Nykaaman search results and extract product links.
-        """
-        links = response.css('a::attr(href)').getall()  # Get all links
+        # Extract product links
+        links = response.css('a::attr(href)').getall()
         for link in links:
-            # Stop if max items limit is reached
             if self.item_count >= self.max_items:
                 self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
                 return
 
             full_url = response.urljoin(link)
-
-            # Check if it's a product URL (looking for pattern `/p/` in the link)
             if self.is_product_url(full_url):
                 if full_url in self.seen_links:
                     continue
@@ -212,16 +277,89 @@ class ProductSpider(scrapy.Spider):
                     'Website': 'Nykaaman',
                     'Product URL': full_url
                 }
-            elif self.is_internal_url(full_url, response.url):  # Follow internal links
+            elif self.is_internal_url(full_url, response.url):
                 yield scrapy.Request(
                     full_url,
                     callback=self.parse_nykaaman,
                     meta={"playwright": True}
                 )
 
+        # Click "View More" button if exists
+        if self.item_count < self.max_items:
+            self.logger.info("Clicking the 'View More' button to load more products.")
+            view_more_button = response.css('button#load-more::attr(id)').get()
+            if view_more_button:
+                yield Request(
+                    url=response.url,
+                    callback=self.parse_nykaaman,
+                    meta={
+                        "playwright": True,
+                        "playwright_click": 'button#load-more'
+                    }
+                )
+
+
+        # Check if there's a "View More" button and trigger the click event to load more products
+        view_more_button = response.css('button.load-more-button')  # Adjusted to use the correct selector
+        if view_more_button and self.item_count < self.max_items:
+            self.logger.info("Clicking 'View More' to load additional products...")
+            yield response.follow(
+                view_more_button.attrib['href'],  # Assuming the button has an href attribute for the next page or dynamic load
+                callback=self.parse_nykaaman,
+                meta={"playwright": True}
+            )
+        
+        # Wait a bit to make sure more products load if needed
+        time.sleep(2)
+
+
+    def parse_tatacliq(self, response):
+        # Extract product links from the search page
+        links = response.css('a::attr(href)').getall()
+        self.logger.info(f"Found {len(links)} links.")
+        
+        for link in links:
+            self.logger.info(f"Checking link: {link}")
+            
+            if self.item_count >= self.max_items:
+                self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
+                return
+
+            full_url = response.urljoin(link)
+            if self.is_product_url(full_url):
+                if full_url in self.seen_links:
+                    continue
+                self.seen_links.add(full_url)
+                self.item_count += 1
+                yield {
+                    'Website': 'TataCliq',
+                    'Product URL': full_url
+                }
+            elif self.is_internal_url(full_url, response.url):
+                yield scrapy.Request(
+                    full_url,
+                    callback=self.parse_tatacliq,
+                    meta={"playwright": True}
+                )
+
+        # If there's a next page, follow the pagination link
+        next_page = response.css('a.pagination-next::attr(href)').get()
+        if next_page and self.item_count < self.max_items:
+            next_page_url = response.urljoin(next_page)
+            self.logger.info(f"Following next page: {next_page_url}")
+            yield scrapy.Request(
+                next_page_url,
+                callback=self.parse_tatacliq,
+                meta={"playwright": True}
+            )
+
     def is_product_url(self, url):
-        return any(re.search(pattern, url) for pattern in self.PRODUCT_PATTERNS)
+        # return any(re.search(pattern, url) for pattern in self.PRODUCT_PATTERNS)
         #   return bool(re.search(r'/p/\d+', url))
+        matches = any(re.search(pattern, url) for pattern in self.PRODUCT_PATTERNS)
+        self.logger.info(f"URL: {url} matches product URL: {matches}")
+        # input("Press Enter to continue...")
+        return matches
     
 
     def is_internal_url(self, url, base_url):
