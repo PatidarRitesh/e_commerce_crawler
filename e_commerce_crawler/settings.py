@@ -40,7 +40,7 @@ ITEM_PIPELINES = {'e_commerce_crawler.pipelines.WriteToCsv': 300}
 dir = r"C:\Users\HXP\Dropbox\PC\Documents\Python Scripts\e_commerce_crawler"
 csv_file_path = os.path.join(dir, filename)
 # Path to the JSON file
-JSON_FILE_PATH = os.path.join(os.path.dirname(__file__), 'output.json')
+JSON_FILE_PATH = os.path.join(os.path.dirname(__file__), 'output2.json')
 
 # Enable the pipeline
 ITEM_PIPELINES = {

@@ -1,42 +1,3 @@
-# from scrapy.http import Request
-# import scrapy
-# from e_commerce_crawler import settings
-# import csv
-# import os
-# import json
-# import re
-# # User inputs
-# product = settings.product
-# domains = settings.domains
-# # csv_file_path = settings.csv_file_path
-# # json_file_path = settings.json_file_path
-
-# class ProductSpider(scrapy.Spider):
-#     name = 'ProductSpider'
-#     item_count = 0  # Initialize item counter
-#     max_items = 20 # Maximum items to crawl
-#     seen_links = set()  # To store visited links and avoid duplicates
-#     custom_settings = {
-#         'PLAYWRIGHT_BROWSER_TYPE': 'chromium',
-#         'PLAYWRIGHT_LAUNCH_OPTIONS': {'headless': True},
-#     }
-
-#     PRODUCT_PATTERNS = [r'/product/', r'/dp/', r'/item/', r'/p/']
-
-#     def start_requests(self):
-#         if domains:
-#             for domain in domains:
-#                 if "flipkart" in domain:
-#                     yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_flipkart)
-#                 elif "snapdeal" in domain:
-#                     yield Request(url=f'https://{domain}/search?keyword={product}', callback=self.parse_snapdeal)
-#                 elif "shopclues" in domain:
-#                     yield Request(url=f'https://{domain}/search?q={product}', callback=self.parse_shopclues)
-#                 elif "paytmmall" in domain:
-#                     yield Request(url=f'https://{domain}/shop/search?q={product}', callback=self.parse_paytm)
-#                 elif "ebay" in domain:
-#                     yield Request(url=f'https://{domain}/sch/i.html?_nkw={product}', callback=self.parse_ebay)
-               
 from scrapy.http import Request
 import scrapy
 from e_commerce_crawler import settings
@@ -86,7 +47,7 @@ class ProductSpider(scrapy.Spider):
                         url=search_url,
                         callback=self.parse_nykaa,
                         meta={"playwright": True}
-                    )
+                    )   
                 if "nykaafashion" in domain:
                     search_url = f'https://{domain}/catalogsearch/result/?q={product}&searchType=ManualSearch&internalSearchTerm={product}'
                     self.logger.info(f"Starting search at: {search_url}")
@@ -111,6 +72,7 @@ class ProductSpider(scrapy.Spider):
                         callback=self.parse_tatacliq,
                         meta={"playwright": True}
                     )
+                
 
 
     def parse_amazon(self, response):
@@ -200,64 +162,7 @@ class ProductSpider(scrapy.Spider):
                     meta={"playwright": True}
                 )
 
-    # def parse_nykaaman(self, response):
-    #     """
-    #     Parse the Nykaaman search results and extract product links.
-    #     """
-    #     links = response.css('a::attr(href)').getall()  # Get all links
-    #     for link in links:
-    #         # Stop if max items limit is reached
-    #         if self.item_count >= self.max_items:
-    #             self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
-    #             return
-
-    #         full_url = response.urljoin(link)
-
-    #         # Check if it's a product URL (looking for pattern `/p/` in the link)
-    #         if self.is_product_url(full_url):
-    #             if full_url in self.seen_links:
-    #                 continue
-    #             self.seen_links.add(full_url)
-    #             self.item_count += 1
-    #             yield {
-    #                 'Website': 'Nykaaman',
-    #                 'Product URL': full_url
-    #             }
-    #         elif self.is_internal_url(full_url, response.url):  # Follow internal links
-    #             yield scrapy.Request(
-    #                 full_url,
-    #                 callback=self.parse_nykaaman,
-    #                 meta={"playwright": True}
-    #             )
-
-    # def parse_nykaaman(self, response):
-    #     """
-    #     Parse the Nykaaman search results and extract product links, also handles dynamic loading of products.
-    #     """
-    #     # Extract product links
-    #     links = response.css('a::attr(href)').getall()
-    #     for link in links:
-    #         if self.item_count >= self.max_items:
-    #             self.crawler.engine.close_spider(self, reason=f"Reached {self.max_items} items")
-    #             return
-
-    #         full_url = response.urljoin(link)
-
-    #         if self.is_product_url(full_url):
-    #             if full_url in self.seen_links:
-    #                 continue
-    #             self.seen_links.add(full_url)
-    #             self.item_count += 1
-    #             yield {
-    #                 'Website': 'Nykaaman',
-    #                 'Product URL': full_url
-    #             }
-    #         elif self.is_internal_url(full_url, response.url):
-    #             yield scrapy.Request(
-    #                 full_url,
-    #                 callback=self.parse_nykaaman,
-    #                 meta={"playwright": True}
-    #             )
+   
 
     def parse_nykaaman(self, response):
         # Extract product links
@@ -603,37 +508,3 @@ class ProductSpider(scrapy.Spider):
                     yield response.follow(next_page, callback=self.parse_ebay)
 
     
-
-    # def write_to_csv(self, website, stock, title, rating, current_price, original_price, link):
-    #     """Write a row to the CSV file."""
-    #     with open(csv_file_path, 'a', encoding='utf-8', newline='') as f:
-    #         writer = csv.writer(f)
-    #         writer.writerow([website, stock, title, rating, current_price, original_price, link])
-
-    # def write_to_json(self, website, stock, title, rating, current_price, original_price, link):
-    #     """Write the scraped data to a JSON file."""
-    #     data = {
-    #         "stock": stock,
-    #         "title": title,
-    #         "rating": rating,
-    #         "current_price": current_price,
-    #         "original_price": original_price,
-    #         "link": link
-    #     }
-
-    #     # Open the JSON file and append the data
-    #     if os.path.exists(json_file_path):
-    #         with open(json_file_path, 'r+', encoding='utf-8') as f:
-    #             existing_data = json.load(f)
-    #             # Append data to the specific website key
-    #             if website not in existing_data:
-    #                 existing_data[website] = []
-    #             existing_data[website].append(data)
-
-    #             f.seek(0)
-    #             json.dump(existing_data, f, indent=4, ensure_ascii=False)
-    #     else:
-    #         with open(json_file_path, 'w', encoding='utf-8') as f:
-    #             # Initialize with empty data
-    #             initial_data = {website: [data]}
-    #             json.dump(initial_data, f, indent=4, ensure_ascii=False)
