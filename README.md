@@ -24,15 +24,15 @@ scrapy crawl ProductSpider
 ```bash
 Enter the product name: mobile phone
 ```
-#### 5. After entering the product name , it will ask for domain name like : amazon.com, flipkart.com, etc. (ypu can enter multiple domain names)
+#### 5. After entering the product name , it will ask for domain name like : amazon.in, flipkart.com, etc. (ypu can enter multiple domain names)
 ```bash
-Enter the domain name: amazon.com
+Enter the domain name: amazon.in
 ```
 #### 6. After entering the details , the output will be in the form of json file in the specified path in settings.py file.
 ```bash
 Output file: C:\Users\HXP\Dropbox\PC\Documents\Python Scripts\e_commerce_crawler\output.json
 ```
-#### 7. For demo purpose, I have added the output.json file in the repository. You can check the output.json file for the output.
+#### 7. For demo purposes, you can check the [output.json](./e_commerce_crawler/e_commerce_crawler/output.json) file for the output.
 
 
 ## Aprroach :
