@@ -22,11 +22,12 @@ scrapy crawl ProductSpider
 ```
 #### 4. On runnig the spider, it will ask for product name like : mobile phone, laptop, etc.
 ```bash
-Enter the product name: mobile phone
+Enter the product name: mobile
 ```
 #### 5. After entering the product name , it will ask for domain name like : amazon.in, flipkart.com, etc. (ypu can enter multiple domain names)
 ```bash
-Enter the domain name: amazon.in
+Enter the domain name: flipkart.com
+```
 ```
 Note : make sure you have Internet connection while running the spider.
 

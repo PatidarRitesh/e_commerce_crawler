@@ -24,7 +24,7 @@ DOWNLOAD_HANDLERS = {
 }
 # Get user inputs
 product = input("Enter the product name: ")
-domains = input("Enter the domains (comma-separated, e.g., flipkart.com,amazon.in): ").split(',')
+domains = input("Enter the domains (comma-separated, e.g., flipkart.com,snapdeal.com): ").split(',')
 domains = [domain.strip().lower() for domain in domains]  # Normalize domain input
 
 filename = product + ".csv"
