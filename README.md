@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Python 3.8+
+- Python 
 - Scrapy
 - Scrapy-Playwright for rendering JavaScript-heavy websites.
 
@@ -28,6 +28,8 @@ Enter the product name: mobile phone
 ```bash
 Enter the domain name: amazon.in
 ```
+Note : make sure you have Internet connection while running the spider.
+
 #### 6. After entering the details , the output will be in the form of json file in the specified path in settings.py file.
 ```bash
 Output file: C:\Users\HXP\Dropbox\PC\Documents\Python Scripts\e_commerce_crawler\output.json
