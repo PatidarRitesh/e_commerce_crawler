@@ -32,7 +32,7 @@ Enter the domain name: amazon.in
 ```bash
 Output file: C:\Users\HXP\Dropbox\PC\Documents\Python Scripts\e_commerce_crawler\output.json
 ```
-#### 7. For demo purposes, you can check the [output.json](./e_commerce_crawler/e_commerce_crawler/output.json) file for the output.
+#### 7. For demo purposes, you can check the [output.json](e_commerce_crawler/output.json) file for the output.
 
 
 ## Aprroach :
