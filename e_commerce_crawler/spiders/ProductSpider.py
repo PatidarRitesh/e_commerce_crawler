@@ -40,6 +40,7 @@ class ProductSpider(scrapy.Spider):
                     yield Request(url=f'https://{domain}/shop/search?q={product}', callback=self.parse_paytm)
                 elif "ebay" in domain:
                     yield Request(url=f'https://{domain}/sch/i.html?_nkw={product}', callback=self.parse_ebay)
+
                 if "nykaa" in domain:
                     search_url = f'https://{domain}/search/result/?q={product}'
                     self.logger.info(f"Starting search at: {search_url}")
@@ -104,6 +105,8 @@ class ProductSpider(scrapy.Spider):
                     callback=self.parse_amazon,
                     meta={"playwright": True}
                 )
+       
+        
 
     def parse_nykaa(self, response):
         links = response.css('a::attr(href)').getall()  # Get all links
@@ -131,7 +134,6 @@ class ProductSpider(scrapy.Spider):
                     callback=self.parse_nykaa,
                     meta={"playwright": True}
                 )
-
     def parse_nykaafashion(self, response):
         """
         Parse the Nykaa Fashion search results and extract product links.
@@ -259,12 +261,12 @@ class ProductSpider(scrapy.Spider):
             )
 
     def is_product_url(self, url):
-        # return any(re.search(pattern, url) for pattern in self.PRODUCT_PATTERNS)
+        return any(re.search(pattern, url) for pattern in self.PRODUCT_PATTERNS)
         #   return bool(re.search(r'/p/\d+', url))
-        matches = any(re.search(pattern, url) for pattern in self.PRODUCT_PATTERNS)
-        self.logger.info(f"URL: {url} matches product URL: {matches}")
-        # input("Press Enter to continue...")
-        return matches
+        # matches = any(re.search(pattern, url) for pattern in self.PRODUCT_PATTERNS)
+        # self.logger.info(f"URL: {url} matches product URL: {matches}")
+        # # input("Press Enter to continue...")
+        # return matches
     
 
     def is_internal_url(self, url, base_url):
@@ -352,6 +354,7 @@ class ProductSpider(scrapy.Spider):
                 # check if the link is a duplicate
                 if link in self.seen_links:
                     continue
+                self.seen_links.add(link)
                 title = item.xpath('.//p/text()').extract_first()
                 current_price = item.xpath('.//span[contains(@class,"product-price")]/text()').extract_first()
                 original_price = item.xpath('.//span[contains(@class,"product-desc-price")]/text()').extract_first()
@@ -363,8 +366,6 @@ class ProductSpider(scrapy.Spider):
                 yield {'Website': 'Snapdeal', 'Stock': stock, 'Product': title, 'Rating': rating,
                        'Current Price': current_price, 'Original Price': original_price, 'LINK': link}
 
-                # self.write_to_csv('Snapdeal', stock, title, rating, current_price, original_price, link)
-                # self.write_to_json('Snapdeal', stock, title, rating, current_price, original_price, link)
 
             # Follow the next page if the item count hasn't been reached
             if self.item_count < self.max_items:
@@ -392,6 +393,7 @@ class ProductSpider(scrapy.Spider):
                 # check if the link is a duplicate
                 if link in self.seen_links:
                     continue
+                self.seen_links.add(link)
                 title = item.xpath('.//h2/text()').extract_first()
                 current_price = item.xpath('.//div[@class="ori_price"]/span/text()').extract_first()
                 ref = item.xpath('.//div[@class="refurbished_i"]/text()').extract_first()
@@ -407,8 +409,6 @@ class ProductSpider(scrapy.Spider):
                 yield {'Website': 'Shopclues', 'Stock': stock, 'Product': title, 'Rating': rating,
                        'Current Price': current_price, 'Original Price': original_price, 'LINK': link}
 
-                # self.write_to_csv('Shopclues', stock, title, rating, current_price, original_price, link)
-                # self.write_to_json('Shopclues', stock, title, rating, current_price, original_price, link)
 
             # Follow the next page if the item count hasn't been reached
             if self.item_count < self.max_items:
@@ -444,6 +444,7 @@ class ProductSpider(scrapy.Spider):
                 # check if the link is a duplicate
                 if link in self.seen_links:
                     continue
+                self.seen_links.add(link)
                 title = item.xpath('.//div[@class="_2apC"]/text()').extract_first()
                 rating = 'NO rating available'
                 stock = 'IN STOCK'
@@ -452,9 +453,6 @@ class ProductSpider(scrapy.Spider):
 
                 yield {'Website': 'Paytm Mall', 'Stock': stock, 'Product': title, 'Rating': rating,
                        'Current Price': current_price, 'Original Price': original_price, 'LINK': link}
-
-                # self.write_to_csv('Paytm Mall', stock, title, rating, current_price, original_price, link)
-                # self.write_to_json('Paytm Mall', stock, title, rating, current_price, original_price, link)
 
             # Follow the next page if the item count hasn't been reached
             if self.item_count < self.max_items:
@@ -483,6 +481,7 @@ class ProductSpider(scrapy.Spider):
                 # check if the link is a duplicate
                 if link in self.seen_links:
                     continue
+                self.seen_links.add(link)
                 title = item.xpath('.//h3[contains(@class, "s-item__title")]/text()').extract_first()
                 rating = item.xpath('.//div[contains(@class, "s-item__reviews")]/span/span/text()').extract_first()
                 current_price = item.xpath('.//span[contains(@class, "s-item__price")]/text()').extract_first()
@@ -498,8 +497,7 @@ class ProductSpider(scrapy.Spider):
                 yield {'Website': 'eBay.com', 'Stock': stock, 'Product': title, 'Rating': rating if rating else 'No rating available',
                        'Current Price': current_price, 'Original Price': original_price, 'LINK': link}
 
-                # self.write_to_csv('eBay.com', stock, title, rating, current_price, original_price, link)
-                # self.write_to_json('eBay.com', stock, title, rating, current_price, original_price, link)
+
 
             # Follow the next page if the item count hasn't been reached
             if self.item_count < self.max_items:

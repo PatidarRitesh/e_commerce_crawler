@@ -1,166 +1,184 @@
 {
-    "amazon": [
+    "Flipkart": [
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Samsung-Storage-Display-Charging-Security/dp/B0DFY3XCB6/ref=sr_1_3?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-3"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Striped Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹389",
+            "Original Price": "1,499",
+            "LINK": "https://www.flipkart.com/hemadhav-men-striped-casual-white-black-shirt/p/itm9133e609bb8e1?pid=SHTGYHMMQXHUGFAN&lid=LSTSHTGYHMMQXHUGFANSX8JW6&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_1&otracker=search&fm=organic&iid=en_XKc55vQaBWWwttZLEqncMExe_nbEKd8uHExsTvwIVivCzqWQ_Ourgel-PR7O-g2ihQpomFd8sp5hotwTEk3kFQ%3D%3D&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/realme-Storage-Comfort-Resistance-48-Month/dp/B0D947DTLT/ref=sr_1_4?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-4"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Solid Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹299",
+            "Original Price": "1,999",
+            "LINK": "https://www.flipkart.com/voroxy-men-solid-casual-red-shirt/p/itm5614d4a38c2c7?pid=SHTGB9FGEHE6VHBD&lid=LSTSHTGB9FGEHE6VHBDKI7F0S&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_2&otracker=search&fm=organic&iid=en_XKc55vQaBWWwttZLEqncMExe_nbEKd8uHExsTvwIViv6o5OgX0zYryWAlx3Lt9p2AbORHwgfRbGf9sA2In6rmg%3D%3D&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/realme-Storage-Display-Dimensity-Charger/dp/B0D3WXQN8N/ref=sr_1_5?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-5"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Self Design Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹389",
+            "Original Price": "1,499",
+            "LINK": "https://www.flipkart.com/jackbella-men-self-design-casual-green-shirt/p/itm1a9d14e09d40e?pid=SHTH3ERZQHZSHF6H&lid=LSTSHTH3ERZQHZSHF6HUUCYVF&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&spotlightTagId=BestsellerId_clo%2Fash%2Faxc&srno=s_1_3&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTH3ERZQHZSHF6H.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/realme-Storage-Display-Dimensity-Charger/dp/B0D3WXQN8N/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-5"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Slim Fit Checkered Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹605",
+            "Original Price": "2,495",
+            "LINK": "https://www.flipkart.com/bear-house-men-checkered-casual-maroon-shirt/p/itm098c67a00fc1f?pid=SHTFY585KT7NEGHQ&lid=LSTSHTFY585KT7NEGHQ91XUZW&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_4&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTFY585KT7NEGHQ.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/realme-Storage-Display-Dimensity-Charger/dp/B0CZS3B3PY/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-5"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Floral Print, Printed Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹389",
+            "Original Price": "1,499",
+            "LINK": "https://www.flipkart.com/hemadhav-men-floral-print-printed-casual-white-shirt/p/itmbc3e7603e91a6?pid=SHTGZHP3AZGNMM2Q&lid=LSTSHTGZHP3AZGNMM2QJ08X81&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_5&otracker=search&fm=organic&iid=en_XKc55vQaBWWwttZLEqncMExe_nbEKd8uHExsTvwIVisMrEI376Q6B1AakKfWNLEDQhpK6Un6FWz6iYQPBCRX1A%3D%3D&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/realme-Storage-Display-Dimensity-Charger/dp/B0CZS4GZ9H/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-5"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Solid Button Down Collar Formal Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹494",
+            "Original Price": "1,499",
+            "LINK": "https://www.flipkart.com/deemoon-men-solid-formal-light-green-shirt/p/itm05fca07e09988?pid=SHTH7ECYETZGS3G7&lid=LSTSHTH7ECYETZGS3G7GIXAUX&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_6&otracker=search&fm=organic&iid=en_XKc55vQaBWWwttZLEqncMExe_nbEKd8uHExsTvwIVivBvjUDcBqzmV75ClS4kd3vr-eySYSNl4L-Q9VikW-Rzw%3D%3D&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://aax-eu.amazon.in/x/c/JLw7rZjLWVDMsmHalJrv5J4AAAGUeNHQdQMAAAH2AQBvbm9fdHhuX2JpZDEgICBvbm9fdHhuX2ltcDIgICCwLFdI/clv1_CEuOPUxokZA0iHrVRMsw3yf1XEJGd6skhZseyDmXseBzx38F3Fj2Uvw18HHE8xvVjq0yzpNb3X7OfU30A3tgK1V_MgSNJPfWAlA8alhMTkbnH4BzxYgc6JJGZxuDsyBd0OH02Js8fRTaMTK1ced40Okgf8rOsX7KbJEJQ9p8WgnNl6TP0wh_BQf6bcGvPLFsHH4HbZmFzptYR2t3PNIRZPsQh9Kumt1TSBDYL7UlzhESrMBvm7fmTUcsgxvigUBeAnGoOOGLoxR1yAlDdY1eRiSPc2OsnheLHsiEzPLCcM4TMlyty6ezwyq5PTDbH4Z5qYHSkpsaNfrXuov2LOe_IMRbiPxMBmzwwcR5s9YqdKSxqUAWXZloGYcTYUo/https://www.amazon.in/dp/B0DGJ3THPR?pd_rd_i=B0DGJ3THPR&pf_rd_p=288d7cd9-bdfb-4778-882a-c15de0f76151&pf_rd_r=438AY7C7X4WZ9FKJYJ4C&pd_rd_wg=YRqUt&pd_rd_w=8ZgU0&pd_rd_r=025fe770-6edf-4b37-a2d0-b627eca3a722"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Solid Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹299",
+            "Original Price": "999",
+            "LINK": "https://www.flipkart.com/vebnor-men-solid-casual-maroon-shirt/p/itm888dc158ad656?pid=SHTFXW9KJRHHAF7C&lid=LSTSHTFXW9KJRHHAF7CTFFWUG&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&spotlightTagId=BestsellerId_clo%2Fash%2Faxc&srno=s_1_7&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTFXW9KJRHHAF7C.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://aax-eu.amazon.in/x/c/JLw7rZjLWVDMsmHalJrv5J4AAAGUeNHQdQMAAAH2AQBvbm9fdHhuX2JpZDEgICBvbm9fdHhuX2ltcDIgICCwLFdI/clv1_CEuOPUxokZA0iHrVRMsw3yf1XEJGd6skhZseyDmXseBzx38F3Fj2Uvw18HHE8xvVjq0yzpNb3X7OfU30A3tgK1V_MgSNJPfWAlA8alhMTkbnH4BzxYgc6JJGZxuDsyBd0OH02Js8fRTaMTK1ced40Okgf8rOsX7KbJEJQ9p8WgnNl6TP0wh_BQf6bcGvPLFsHH4HbZmFzptYR2t3PNIRZPsQh9Kumt1TSBDYL7UlzhESrMBvm7fmTUcsgxvigUBeAnGoOOGLoxR1yAlDdY1eRiSPc2OsnheLHsiEzPLCcM4TMlyty6ezwyq5PTDbH4Z5qYHSkpsaNfrXuov2LOe_IMRbiPxMBmzwwcR5s9YqdKSxqUAWXZloGYcTYUo/https://www.amazon.in/iPhone-16-Pro-128-GB/dp/B0DGJ3THPR/ref=sxin_15_sbv_search_btf?content-id=amzn1.sym.288d7cd9-bdfb-4778-882a-c15de0f76151%3Aamzn1.sym.288d7cd9-bdfb-4778-882a-c15de0f76151&cv_ct_cx=mobile&keywords=mobile&pd_rd_i=B0DGJ3THPR&pd_rd_r=025fe770-6edf-4b37-a2d0-b627eca3a722&pd_rd_w=8ZgU0&pd_rd_wg=YRqUt&pf_rd_p=288d7cd9-bdfb-4778-882a-c15de0f76151&pf_rd_r=438AY7C7X4WZ9FKJYJ4C&qid=1737193803&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-1-9131241a-a358-4619-a7b8-0f5a65d91d81"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Self Design Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹389",
+            "Original Price": "1,499",
+            "LINK": "https://www.flipkart.com/jackbella-men-self-design-casual-white-shirt/p/itme04c6b31734de?pid=SHTH2M5TVUJQTAZD&lid=LSTSHTH2M5TVUJQTAZDJYFPZO&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_8&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTH2M5TVUJQTAZD.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://aax-eu.amazon.in/x/c/JLw7rZjLWVDMsmHalJrv5J4AAAGUeNHQdQMAAAH2AQBvbm9fdHhuX2JpZDEgICBvbm9fdHhuX2ltcDIgICCwLFdI/clv1_CEuOPUxokZA0iHrVRMsw3yf1XEJGd6skhZseyDmXseBzx38F3Fj2Uvw18HHE8xvVjq0yzpNb3X7OfU30A3tgK1V_MgSNJPfWAlA8alhMTkbnH4BzxYgc6JJGZxuDsyBd0OH02Js8fRTaMTK1ced40Okgf8rOsX7KbJEJQ9p8WgnNl6TP0wh_BQf6bcGvPLFsHH4HbZmFzptYR2t3PNIRZPsQh9Kumt1TSBDYL7UlzhESrMBvm7fmTUcsgxvigUBeAnGoOOGLoxR1yAlDdY1eRiSPc2OsnheLHsiEzPLCcM4TMlyty6ezwyq5PTDbH4Z5qYHSkpsaNfrXuov2LOe_IMRbiPxMBmzwwcR5s9YqdKSxqUAWXZloGYcTYUo/https://www.amazon.in/iPhone-16-Pro-128-GB/dp/B0DGJ3THPR/ref=sxin_15_sbv_search_btf?content-id=amzn1.sym.288d7cd9-bdfb-4778-882a-c15de0f76151%3Aamzn1.sym.288d7cd9-bdfb-4778-882a-c15de0f76151&cv_ct_cx=mobile&keywords=mobile&pd_rd_i=B0DGJ3THPR&pd_rd_r=025fe770-6edf-4b37-a2d0-b627eca3a722&pd_rd_w=8ZgU0&pd_rd_wg=YRqUt&pf_rd_p=288d7cd9-bdfb-4778-882a-c15de0f76151&pf_rd_r=438AY7C7X4WZ9FKJYJ4C&qid=1737193803&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-1-9131241a-a358-4619-a7b8-0f5a65d91d81#customerReviews"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Slim Fit Floral Print Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹1,511",
+            "Original Price": "2,799",
+            "LINK": "https://www.flipkart.com/rare-rabbit-men-floral-print-casual-multicolor-shirt/p/itm89ca818faab04?pid=SHTG9GZMYYGSFGZW&lid=LSTSHTG9GZMYYGSFGZW5T07HR&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_9&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTG9GZMYYGSFGZW.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Samsung-Storage-MediaTek-Dimensity-Security/dp/B0DGXBSYHS/ref=sr_1_6?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-6"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Checkered Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹249",
+            "Original Price": "1,999",
+            "LINK": "https://www.flipkart.com/surhi-men-checkered-casual-grey-shirt/p/itm19fb8bf15b04c?pid=SHTGN5ASEHMCJQE9&lid=LSTSHTGN5ASEHMCJQE9KEKSGN&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&spotlightTagId=BestsellerId_clo%2Fash%2Faxc&srno=s_1_10&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTGN5ASEHMCJQE9.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Samsung-Storage-MediaTek-Dimensity-Security/dp/B0DGXBSYHS/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-6"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Slim Fit Checkered Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹419",
+            "Original Price": "1,999",
+            "LINK": "https://www.flipkart.com/vellical-men-checkered-casual-multicolor-shirt/p/itmbe8410dbcefe1?pid=SHTGUHWSBFSCBHBR&lid=LSTSHTGUHWSBFSCBHBRBJQPFQ&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_11&otracker=search&fm=organic&iid=en_XKc55vQaBWWwttZLEqncMExe_nbEKd8uHExsTvwIVivIxy2V3AbjTpTKDKNEshxciJNYpSBc87wDUn-7_zFuAg%3D%3D&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Samsung-Storage-MediaTek-Dimensity-Security/dp/B0DGX9VVFV/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-6"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Relaxed Fit Fit Solid Mandarin Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹239",
+            "Original Price": "1,299",
+            "LINK": "https://www.flipkart.com/paralians-men-solid-casual-white-shirt/p/itm908f8d6ff7033?pid=SHTH3WUY9CCBFHFP&lid=LSTSHTH3WUY9CCBFHFPRMW3GO&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_12&otracker=search&fm=organic&iid=en_XKc55vQaBWWwttZLEqncMExe_nbEKd8uHExsTvwIVisJ1BjAQhyEHFG0ttUh0gG4s7kVEueKFjeHQp_c4WPVEg%3D%3D&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Samsung-Storage-MediaTek-Dimensity-Security/dp/B0DGXB4SX1/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-6"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Slim Fit Checkered Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹415",
+            "Original Price": "1,749",
+            "LINK": "https://www.flipkart.com/indian-garage-co-men-checkered-casual-brown-shirt/p/itm511568f73b909?pid=SHTFUHKTAG6E8HAV&lid=LSTSHTFUHKTAG6E8HAVZ1Z2DY&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_13&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTFUHKTAG6E8HAV.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Tecno-Glittery-Mediatek-Speaker-Charging/dp/B0DKP5T9F9/ref=sr_1_7?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-7"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Self Design Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹389",
+            "Original Price": "1,499",
+            "LINK": "https://www.flipkart.com/jackbella-men-self-design-casual-maroon-shirt/p/itm9b2db9b7fc4e5?pid=SHTH45S8FNGBAFJG&lid=LSTSHTH45S8FNGBAFJGVIQX55&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_14&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTH45S8FNGBAFJG.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Tecno-Glittery-Mediatek-Speaker-Charging/dp/B0DKP5T9F9/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-7"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Slim Fit Floral Print Mandarin Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹1,000",
+            "Original Price": "2,499",
+            "LINK": "https://www.flipkart.com/flying-machine-men-floral-print-casual-dark-blue-white-shirt/p/itme7789cc70a6c8?pid=SHTGM6WY8VYMJJXM&lid=LSTSHTGM6WY8VYMJJXMRZP500&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_15&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTGM6WY8VYMJJXM.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Tecno-Glittery-Mediatek-Speaker-Charging/dp/B0DKP92X7X/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-7"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Slim Fit Solid Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹771",
+            "Original Price": "2,599",
+            "LINK": "https://www.flipkart.com/killer-men-solid-casual-light-green-shirt/p/itm29acac6feabb7?pid=SHTGTZYYYWSFSPU6&lid=LSTSHTGTZYYYWSFSPU62MSDR3&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_16&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTGTZYYYWSFSPU6.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Tecno-Glittery-Mediatek-Speaker-Charging/dp/B0DKP72YJ3/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-7"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Checkered Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹399",
+            "Original Price": "999",
+            "LINK": "https://www.flipkart.com/blue-martin-men-checkered-casual-multicolor-shirt/p/itm13dc9c6053f20?pid=SHTGM92W4T7ZVCAZ&lid=LSTSHTGM92W4T7ZVCAZ9ZZUC5&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_17&otracker=search&fm=organic&iid=en_XKc55vQaBWWwttZLEqncMExe_nbEKd8uHExsTvwIVitockML5g0Kkh74N_OwXlLqFXzcI4S68Aycd9h_NnuhMQ%3D%3D&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Samsung-Celestial-MediaTek-Dimensity-Security/dp/B0DGXB4SX1/ref=sr_1_8?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-8"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Regular Fit Dyed/Ombre Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹299",
+            "Original Price": "1,499",
+            "LINK": "https://www.flipkart.com/voroxy-men-dyed-ombre-casual-dark-green-white-shirt/p/itm58c095e56e04e?pid=SHTGSCXBZDHJNYZG&lid=LSTSHTGSCXBZDHJNYZG29VCWZ&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_18&otracker=search&fm=organic&iid=en_XKc55vQaBWWwttZLEqncMExe_nbEKd8uHExsTvwIViv1XOSIxhPAKw8FMnn6rlyi3EM-pVJOUP2LWsljz3l0qg%3D%3D&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Samsung-Celestial-MediaTek-Dimensity-Security/dp/B0DGXB4SX1/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-8"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Slim Fit Solid Spread Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹771",
+            "Original Price": "2,599",
+            "LINK": "https://www.flipkart.com/killer-men-solid-casual-dark-green-shirt/p/itm509522d5ae2a7?pid=SHTGTZYY8UU3SCZF&lid=LSTSHTGTZYY8UU3SCZFKIAYRR&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&spotlightTagId=TrendingId_clo%2Fash%2Faxc&srno=s_1_19&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTGTZYY8UU3SCZF.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         },
         {
-            "Website": "amazon",
-            "Product URL": "https://www.amazon.in/Samsung-Celestial-MediaTek-Dimensity-Security/dp/B0DGX9VVFV/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.YFHwfIh7GPJJ09bm1bBID1ERR4aFaDuas6BKXeOgy7a9aqHVk1c1Z_nMHxQVMKIdnjF7EmxRkkG6kMV1V9nDPC4ozLUMJfZlitR6NVC98AtSTaYIwYye-_dnuXk83nFVwz-o_W3fYJnlg5VHIvadEN84hY0sw-iDYMbFpOKneI8UJzWf6fUuuUp3wyDV8TwSC9rJ9VdBqUaJLwA_e21xA-iHYdScdzeLZsDZieea-rg.7MEuZSv1a4v3MgJLm9RhP8RImfBKMxAxO5hGg5zlkAw&dib_tag=se&keywords=mobile&qid=1737193803&sr=8-8"
-        }
-    ],
-    "flipkart": [
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/metronaut-slim-men-dark-grey-jeans/p/itm01362e2152622?pid=JEAHFJ4AJA8DKFH8&lid=LSTJEAHFJ4AJA8DKFH8APV7YK&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_1&otracker=search&iid=en_iMq36lP_XEqWDMUHvdO8mMa7NSeQnVIkyNWFnm3E3MhTEhSiZVnknMnsxPtpt_ildAP9my04oDKOuQUWFEeR4g%3D%3D&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/metronaut-slim-men-dark-blue-jeans/p/itmdf29b5f6fa3f7?pid=JEAGXPCRBHGPUGGC&lid=LSTJEAGXPCRBHGPUGGCYNN8GV&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_2&otracker=search&iid=en_iMq36lP_XEqWDMUHvdO8mMa7NSeQnVIkyNWFnm3E3MhBO4yO-XnaPCK51GFgygETQwpkTBCrcez_9U7cNJhNiw%3D%3D&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/u-s-polo-assn-denim-co-slim-men-black-jeans/p/itmd5e37ab010660?pid=JEAH3FFTTGY9DS3Q&lid=LSTJEAH3FFTTGY9DS3QOUCJNT&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_3&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAH3FFTTGY9DS3Q.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/glossia-boyfriend-women-blue-jeans/p/itm90715326f2435?pid=JEAH76K6ZJ2RCHQX&lid=LSTJEAH76K6ZJ2RCHQXDMTP1S&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_4&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAH76K6ZJ2RCHQX.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/metronaut-slim-men-dark-blue-jeans/p/itmcaea7ea3633d2?pid=JEAGXPCVKWM55KUH&lid=LSTJEAGXPCVKWM55KUHGZLIXL&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_5&otracker=search&iid=en_iMq36lP_XEqWDMUHvdO8mMa7NSeQnVIkyNWFnm3E3Mjpop7qqQ6U-eMOZaOJWf7zdib3wGcxsiKT6VdI0oSlHw%3D%3D&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/metronaut-slim-men-dark-grey-jeans/p/itma763d4da9a01e?pid=JEAHFHGURHPZH9GG&lid=LSTJEAHFHGURHPZH9GG9HKUNW&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_6&otracker=search&iid=en_iMq36lP_XEqWDMUHvdO8mMa7NSeQnVIkyNWFnm3E3MhwFfsWzSSaPXDDKKBgMNRBhule2vK1Ord6N3tLZdBfjA%3D%3D&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/robecult-collection-boyfriend-women-blue-jeans/p/itm521eaf1fbf1a8?pid=JEAGZ6K3NDZTUWDA&lid=LSTJEAGZ6K3NDZTUWDA6P3ZSA&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_7&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAGZ6K3NDZTUWDA.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/vogaan-tapered-fit-men-blue-jeans/p/itm3c501d1a7fa40?pid=JEAH6WQ7B48ZTMUZ&lid=LSTJEAH6WQ7B48ZTMUZOU18HW&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_8&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAH6WQ7B48ZTMUZ.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/twelvemonkey-loose-fit-women-light-blue-jeans/p/itmd28e54d772fb4?pid=JEAH7VY6MG9HCCBQ&lid=LSTJEAH7VY6MG9HCCBQX8EWO1&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_9&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAH7VY6MG9HCCBQ.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/u-s-polo-assn-regular-men-dark-blue-jeans/p/itm50aedf8d2c842?pid=JEAGYKF2Z2FQGGHR&lid=LSTJEAGYKF2Z2FQGGHRL93UQI&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_10&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAGYKF2Z2FQGGHR.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/metronaut-slim-men-black-jeans/p/itm7ac6553045efa?pid=JEAHFJ4AMNAENZDG&lid=LSTJEAHFJ4AMNAENZDGF3QFFF&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_11&otracker=search&iid=en_iMq36lP_XEqWDMUHvdO8mMa7NSeQnVIkyNWFnm3E3MhnVwDzxMPCovI7ADdUcBAGm0HgCg6c64nYEfP8cA7Ekw%3D%3D&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/urbano-juniors-slim-boys-blue-jeans/p/itmdd3400d7b35ee?pid=JEAGKHZSBKF7KGVN&lid=LSTJEAGKHZSBKF7KGVNXFR4RE&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_12&otracker=search&iid=en_iMq36lP_XEqWDMUHvdO8mMa7NSeQnVIkyNWFnm3E3MhCtY_3O7NjVLjqT5KOgDut5aOrJb49d6DkvOlRPjDJa4nfEY2D5bWfIUmTlXs_oiU%3D&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/being-human-straight-fit-men-blue-jeans/p/itmb2fb3121abac9?pid=JEAH4DBYVQDEUD5N&lid=LSTJEAH4DBYVQDEUD5N8HQ5UG&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&spotlightTagId=TrendingId_clo%2Fvua%2Fk58&srno=s_1_13&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAH4DBYVQDEUD5N.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/spykar-slim-men-blue-jeans/p/itm0d2333101a3fd?pid=JEAH4M5ZSBTQFDHB&lid=LSTJEAH4M5ZSBTQFDHBRJJYG2&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&spotlightTagId=TrendingId_clo%2Fvua%2Fk58&srno=s_1_14&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAH4M5ZSBTQFDHB.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/harvard-flared-women-red-jeans/p/itm16e97764d1b6b?pid=JEAH4ZUBWPD48TBF&lid=LSTJEAH4ZUBWPD48TBFAGYFUD&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_15&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAH4ZUBWPD48TBF.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/killer-slim-men-blue-jeans/p/itm23ce8327cf729?pid=JEAH4Y4ZENDSSCFQ&lid=LSTJEAH4Y4ZENDSSCFQ7E7EBX&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_16&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAH4Y4ZENDSSCFQ.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/roadster-skinny-men-dark-blue-jeans/p/itm12367c213cd46?pid=JEAFM6352ZKW6KSM&lid=LSTJEAFM6352ZKW6KSM20LZWN&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_17&otracker=search&iid=en_iMq36lP_XEqWDMUHvdO8mMa7NSeQnVIkyNWFnm3E3MiTfX3vXTXdbgvyvAqEBkRVVJiHsTSjaGUG8llj8cxTT2Vkv0XZFiOX7bbXdlao_f8%3D&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/metronaut-slim-men-purple-jeans/p/itm5bc01490dc0e9?pid=JEAHFJ4AUUZCKGFZ&lid=LSTJEAHFJ4AUUZCKGFZLYKRP8&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_18&otracker=search&iid=en_iMq36lP_XEqWDMUHvdO8mMa7NSeQnVIkyNWFnm3E3Mj_BXEqNIyrEG2BAdIk-hS0ZkdTXb48EXjMLOxh1YaUNQ%3D%3D&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/roadster-straight-fit-men-black-jeans/p/itm110b1f6055d6a?pid=JEAH8BUHTC2NEWPW&lid=LSTJEAH8BUHTC2NEWPWXKEMNF&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_19&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAH8BUHTC2NEWPW.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
-        },
-        {
-            "Website": "flipkart",
-            "Product URL": "https://www.flipkart.com/urbano-juniors-slim-boys-black-jeans/p/itm0fec8654caa0d?pid=JEAFPHXEFUHBMWVY&lid=LSTJEAFPHXEFUHBMWVYPXDKLY&marketplace=FLIPKART&q=jeans&store=clo%2Fvua%2Fk58&srno=s_1_20&otracker=search&iid=b8932c23-e17d-473f-8efb-a2837c5c1d67.JEAFPHXEFUHBMWVY.SEARCH&ssid=t297sn9nkg0000001737193925586&qH=a0f2589b1ced4dec"
+            "Website": "Flipkart",
+            "Stock": "IN STOCK",
+            "Product": "Men Slim Fit Solid Lapel Collar Casual Shirt",
+            "Rating": "NO Rating available",
+            "Current Price": "₹599",
+            "Original Price": "1,499",
+            "LINK": "https://www.flipkart.com/vastrado-men-solid-casual-orange-shirt/p/itmc416b5ae3991c?pid=SHTH29UX3QSWKHZ5&lid=LSTSHTH29UX3QSWKHZ5FWOB6V&marketplace=FLIPKART&q=shirts&store=clo%2Fash%2Faxc&srno=s_1_20&otracker=search&fm=organic&iid=9428e070-2a1c-4295-bbe1-ff33f1f27b2f.SHTH29UX3QSWKHZ5.SEARCH&ppt=None&ppn=None&ssid=agm1fo414w0000001737260650736&qH=514ca2b2d46ccf67"
         }
     ]
 }
